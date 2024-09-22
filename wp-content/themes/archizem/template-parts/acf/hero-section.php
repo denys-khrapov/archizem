@@ -10,7 +10,9 @@ $background_style = $image_url ? "background-image: url('" . esc_url($image_url)
 <?php if ($title || $link || $image_id) : ?>
   <section class="<?php echo $section_classes; ?>" style="<?php echo esc_attr($background_style); ?>">
     <div class="container">
-      <h1 class="main-title"><?php echo esc_html($title); ?></h1>
+      <?php if ($title): ?>
+        <h1 class="main-title"><?php echo esc_html($title); ?></h1>
+      <?php endif; ?>
 
       <?php if ($link):
         $link_url = $link['url'];

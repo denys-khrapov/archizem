@@ -22,23 +22,29 @@ $image_id  = get_field('image_id', false, false);
 
                     <?php if (have_rows('statistics') || $link): ?>
                         <div class="col-right">
-                            <div class="statistics-box">
-                                <?php if (have_rows('statistics')): ?>
-                                    <div class="statistics-items">
-                                        <?php while (have_rows('statistics')): the_row();
-                                            $statistic_number = get_sub_field('statistic_number');
-                                            $statistic_subtitle = get_sub_field('statistic_subtitle');
-                                            $statistic_text = get_sub_field('statistic_text');
-                                        ?>
-                                            <div class="statistics-item">
+                            <?php if (have_rows('statistics')): ?>
+                                <div class="statistics-items">
+                                    <?php while (have_rows('statistics')): the_row();
+                                        $statistic_number = get_sub_field('statistic_number');
+                                        $statistic_subtitle = get_sub_field('statistic_subtitle');
+                                        $statistic_text = get_sub_field('statistic_text');
+                                    ?>
+                                        <div class="statistics-item">
+                                            <?php if ($statistic_number) : ?>
                                                 <div class="number"><?php echo esc_html($statistic_number); ?></div>
+                                            <?php endif; ?>
+
+                                            <?php if ($statistic_subtitle) : ?>
                                                 <h3 class="title"><?php echo esc_html($statistic_subtitle); ?></h3>
+                                            <?php endif; ?>
+
+                                            <?php if ($statistic_text) : ?>
                                                 <div class="text-holder"><?php echo esc_html($statistic_text); ?></div>
-                                            </div>
-                                        <?php endwhile; ?>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
 
                             <?php if ($link):
                                 $link_url = $link['url'];

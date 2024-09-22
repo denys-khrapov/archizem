@@ -329,6 +329,7 @@ template {
   height: 2px;
   background-color: rgba(44, 44, 54, 0.6);
   transition: width 0.6s, background 0.4s;
+  border-radius: 0 !important;
   margin: 0 !important;
 }
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -1217,23 +1218,20 @@ img {
   row-gap: 30px;
   -moz-column-gap: 35px;
        column-gap: 35px;
-}
-
-.statistics-box {
   background-color: #fff;
   padding: 20px 25px;
 }
 @media (min-width: 1261.98px) {
-  .statistics-box {
+  .statistics-items {
     padding: 40px 50px;
   }
 }
 @media (min-width: 1576px) {
-  .statistics-box {
+  .statistics-items {
     margin-left: -60px;
   }
 }
-.statistics-box:not(:last-child) {
+.statistics-items:not(:last-child) {
   margin-bottom: 26px;
 }
 

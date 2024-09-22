@@ -9,8 +9,9 @@
         height: 2px;
         background-color: rgba(44, 44, 54, 0.60);
         transition: width 0.6s, background 0.4s;
+        border-radius: 0!important;
         margin: 0!important;
-
+        
         &.swiper-pagination-bullet-active {
             background-color: $green;
             width: 37px;

@@ -10,3 +10,4 @@ add_image_size('thumbnail_statistics_img', 930, 9999, false);
 add_image_size('thumbnail_projects_bg', 1920, 825, false);
 add_image_size('thumbnail_clients_img', 595, 9999, false);
 add_image_size('thumbnail_services_img', 915, 9999, false);
+add_image_size('thumbnail_social_icon', 80, 80, true);

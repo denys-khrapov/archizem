@@ -16,11 +16,6 @@ $phone_main_link = get_field('phone_main_link', 'option');
   <?php wp_body_open(); ?>
   <div class="page-holder">
     <div class="wrapper" id="wrapper">
-      <a class="skip-link screen-reader-text" href="#content">
-        <?php
-        esc_html_e('Skip to content', 'wpbase');
-        ?>
-      </a>
 
       <header class="header" id="header">
         <div class="container">
@@ -129,7 +124,7 @@ $phone_main_link = get_field('phone_main_link', 'option');
             </div>
           <?php endif; ?>
 
-          <?php if (has_nav_menu('header-navigation')) : ?>
+          <?php if (has_nav_menu('header-navigation') || $phone_main_link) : ?>
             <div class="menu-burger"><span></span></div>
           <?php endif; ?>
         </div>

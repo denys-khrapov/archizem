@@ -46,7 +46,7 @@ $footer_logo      = get_theme_mod('footer_logo');
                   <li class="item">
                     <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"
                       rel="noopener noreferrer">
-                      <?php echo wp_get_attachment_image($social_image_id, 'full'); ?>
+                      <?php echo wp_get_attachment_image($social_image_id, 'thumbnail_social_icon'); ?>
                     </a>
                   </li>
                 <?php endif; ?>

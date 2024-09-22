@@ -16,7 +16,6 @@ $image_id  = get_field('image_id', false, false);
 
             <?php if ($title || $text || have_rows('clients_group')) : ?>
                 <div class="col-right">
-
                     <?php if ($title || $text) : ?>
                         <div class="clients-top-desc">
                             <?php if ($title) : ?>
@@ -35,13 +34,11 @@ $image_id  = get_field('image_id', false, false);
                                 <?php while (have_rows('clients_group')): the_row();
                                 ?>
                                     <div class="swiper-slide clients-slide">
-
                                         <?php if (have_rows('clients_logo')) : ?>
                                             <?php while (have_rows('clients_logo')): the_row();
                                                 $client_logo_id = get_sub_field('client_logo_id');
                                                 $client_link = get_sub_field('client_link');
                                             ?>
-
                                                 <?php if ($client_link):
                                                     $link_url = $client_link['url'];
                                                     $link_title = $client_link['title'];
@@ -52,23 +49,16 @@ $image_id  = get_field('image_id', false, false);
                                                         <?php echo wp_get_attachment_image($client_logo_id); ?>
                                                     </a>
                                                 <?php endif; ?>
-
                                             <?php endwhile; ?>
-
                                         <?php endif; ?>
-
                                     </div>
                                 <?php endwhile; ?>
                             </div>
                             <div class="swiper-pagination"></div>
-
                         </div>
                     <?php endif; ?>
-
                 </div>
             <?php endif; ?>
         </div>
-
-
     </section>
 <?php endif; ?>
