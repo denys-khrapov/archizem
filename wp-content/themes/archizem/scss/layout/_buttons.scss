@@ -1,0 +1,26 @@
+.btn {
+    color: $white;
+    background-color: $green;
+    font-family: $baseFont;
+    width: fit-content;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.4s;
+    padding: 13px 20px;
+    margin: 0;
+
+    @media (min-width:$pc){
+        padding: 26px 40px;
+    }
+
+    &:hover {
+        background-color: $greenHover;
+    }
+}

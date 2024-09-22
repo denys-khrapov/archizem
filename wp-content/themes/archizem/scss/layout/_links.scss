@@ -1,0 +1,23 @@
+.link {
+    color: $green;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 550;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        color: $greenHover;
+
+        &::before {
+            color: $greenHover;
+        }
+    }
+
+}

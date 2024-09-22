@@ -1,0 +1,110 @@
+.clients-section {
+    background-color: $bgGray;
+    padding: 60px 0;
+
+    @media (min-width:$pc) {
+        padding: 120px 0;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 34px;
+
+        @media (min-width:$pc) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .col-left {
+        flex-shrink: 0;
+        width: 100%;
+
+        @media (min-width:$pc) {
+            width: auto;
+        }
+    }
+
+    .col-right {
+        min-width: 0;
+        overflow: hidden;
+        padding-bottom: 40px;
+    }
+
+    .image-holder {
+        text-align: center;
+
+        img {
+            height: auto;
+        }
+    }
+
+    .section-title {
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    .text-holder {
+        font-size: 16px;
+    }
+
+    .clients-top-desc {
+        text-align: center;
+
+        @media (min-width:$pc) {
+            text-align: left;
+            padding-right: 187px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.clients-swiper {
+    overflow: visible;
+
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .swiper-pagination {
+        bottom: -40px;
+    }
+
+}
+
+.clients-slide {
+    background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    height: auto;
+    padding: 0 10px;
+
+    @media (min-width:$mobileSmall) {
+        padding: 0 20px;
+
+    }
+
+    .client-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        width: calc(50% - 5px);
+
+        img{
+            object-fit: contain;
+        }
+
+        @media (min-width:$mobileSmall) {
+            flex: 1 0 0;
+            min-width: 180px;
+        }
+    }
+}

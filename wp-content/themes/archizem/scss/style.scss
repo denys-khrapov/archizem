@@ -1,0 +1,31 @@
+/*
+Theme Name: Archizem
+Author: Anonymous
+Author URI:
+Version: 1.0.0
+Description: Base theme for Wordpress with ACF
+Text Domain: base
+Tags: one-column, two-columns
+Theme URI:
+*/
+
+@import "layout/variables";
+
+@import "includes/normalize";
+@import "includes/swiper";
+
+@import "layout/fonts";
+@import "layout/icons";
+@import "layout/links";
+@import "layout/buttons";
+@import "layout/common";
+@import "layout/header";
+@import "layout/footer";
+
+@import "blocks/hero-section";
+@import "blocks/about-section";
+@import "blocks/statistics-section";
+@import "blocks/projects-section";
+@import "blocks/clients-section";
+@import "blocks/services-section";
+

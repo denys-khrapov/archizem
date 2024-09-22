@@ -1,0 +1,290 @@
+.header {
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 127px;
+    align-items: center;
+    min-height: 100px;
+    justify-content: space-between;
+
+    @media (min-width:$pc) {
+      justify-content: unset;
+    }
+  }
+
+  &-contacts {
+    display: none;
+
+    @media (min-width:$pc) {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+    }
+  }
+
+
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .phone-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      font-family: 'Raleway', sans-serif;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      padding: 12px 16px;
+    }
+
+    @media (min-width:$pc) {
+      display: block;
+    }
+  }
+
+
+  .dropdown-content {
+    padding: 0;
+    margin: 0;
+
+    @media (min-width:$pc) {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+  }
+
+  &-menu {
+    .dropdown {
+      @media (min-width:$pc) {
+        display: none;
+      }
+    }
+
+  }
+
+  .main-phone-link {
+    color: $text;
+
+    &::before {
+      display: none;
+
+      @media (min-width:$pc) {
+        display: block;
+        transform: rotate(90deg);
+        color: #00AE57;
+      }
+    }
+
+    &:hover {
+      color: $greenHover;
+
+      &::before {
+        color: $greenHover;
+      }
+    }
+  }
+
+  .dropdown-content a {
+    width: 100%;
+    color: $text;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+    transition: color 0.4s, background 0.4s;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: $greenHover;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .btn-phone {
+    background-color: $green;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transition: background 0.4s;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 23px;
+      color: $white;
+    }
+
+    &:hover {
+      background-color: $greenHover;
+    }
+  }
+
+}
+
+
+.header-navigation {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 29px;
+  row-gap: 16px;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width:$pc) {
+    flex-direction: row;
+    row-gap: 12px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    color: $text;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 550;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: color 0.4s;
+
+    @media (min-width:$pc) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $greenHover;
+    }
+  }
+}
+
+
+
+.header-menu {
+  background-color: $white;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  z-index: 100;
+  transition: top 0.4s;
+  padding: 60px 52px;
+
+  @media (min-width: $pc) {
+    width: auto;
+    max-width: auto;
+    background-color: transparent;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    overflow: unset;
+    padding: 0;
+  }
+
+  &.active {
+    top: 0;
+  }
+}
+
+.menu-burger {
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+
+  @media (min-width: $pc) {
+    display: none;
+  }
+
+  &.active {
+    span {
+      background-color: $white;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.menu-burger span {
+  background-color: $black;
+  width: 18px;
+  height: 1px;
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: -5px;
+  }
+
+  &::after {
+    bottom: -5px;
+  }
+
+}

@@ -1,0 +1,73 @@
+.projects-section {
+    padding: 30px 16px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width:$pc) {
+        padding: 60px 0 120px;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .image-holder {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+
+            @media (min-width:$pc) {
+                margin-bottom: 31px;
+            }
+        }
+    }
+
+    .link {
+        width: 100%;
+        max-width: 1262px;
+        justify-content: center;
+        border-left: 1px solid $green;
+        border-right: 1px solid $green;
+        transition: border-color 0.4s, color 0.4s;
+        padding: 15px 10px;
+        @media (min-width:$pc){
+            border-color: transparent;
+            padding: 25px 10px;
+        }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background-color: $green;
+            width: 100%;
+            height: 1px;
+            transition: background 0.4s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &:hover {
+            border-left: 1px solid $greenHover;
+            border-right: 1px solid $greenHover;
+            &::before,
+            &::after {
+                background-color: $greenHover;
+            }
+        }
+    }
+}
